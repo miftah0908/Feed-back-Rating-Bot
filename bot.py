@@ -1,12 +1,11 @@
 import json
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, KeyboardButton
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, MessageHandler, Filters
+import os
 
-# membuka file app.json untuk membaca token dan id owner
-with open('app.json') as f:
-    data = json.load(f)
-    TOKEN = data['token']
-    OWNER_ID = data['owner_id']
+TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
+OWNER_ID = os.environ.get('TELEGRAM_OWNER_ID')
+
 
 # inisialisasi updater
 updater = Updater(TOKEN, use_context=True)
@@ -78,11 +77,6 @@ def error(update, context):
 
 # main program
 if __name__ == '__main__':
-    # baca token bot dan id owner dari app.json
-    with open('app.json', 'r') as f:
-        data = json.load(f)
-    TOKEN = data['token']
-    owner_id = data['owner_id']
 
     # inisialisasi updater
     updater = Updater(TOKEN, use_context=True)
