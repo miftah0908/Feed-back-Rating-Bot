@@ -12,7 +12,18 @@
       "required": true
     }
   },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
   "scripts": {
-    "start": "python bot.py"
+    "worker": "python bot.py"
   }
 }
