@@ -1,0 +1,18 @@
+{
+  "name": "feedback-rating-bot",
+  "description": "A Telegram bot for feedback and rating",
+  "repository": "https://github.com/yourusername/feedback-rating-bot",
+  "env": {
+    "TOKEN": {
+      "description": "Telegram bot token",
+      "required": true
+    },
+    "OWNER_CHAT_ID": {
+      "description": "Telegram chat ID of the bot owner",
+      "required": true
+    }
+  },
+  "scripts": {
+    "start": "python bot.py"
+  }
+}
